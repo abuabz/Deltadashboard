@@ -1,23 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="relative flex items-center justify-center h-screen">
+      {/* Background image wrapper with blur */}
+      <div
+        className="absolute inset-0"
+        style={{
+          backgroundImage: 'url(https://deltabusinesssolution.netlify.app/Image/OFFICEEE.jpg)',
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat',
+          filter: 'blur(5px)', // Blur effect only on background image
+          zIndex: -1, // Ensure it stays behind the content
+        }}
+      />
+
+      {/* Foreground content */}
+      <div className="relative p-6 max-w-sm mx-auto bg-white rounded-xl shadow-md flex items-center space-x-4">
+        <div>
+          <h1 className="text-xl font-medium text-black">Welcome to Tailwind CSS in React!</h1>
+          <p className="text-gray-500">This is a basic React and Tailwind app.</p>
+        </div>
+      </div>
     </div>
   );
 }
